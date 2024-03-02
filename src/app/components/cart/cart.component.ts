@@ -23,12 +23,12 @@ export class CartComponent implements OnInit {
     this.calcPrice();
   }
 
-  clearCart(): void {
+  clearCart() {
     this.cartService.resetCart();
     this.items = [];
   }
 
-  calcPrice(): void {
+  calcPrice() {
     this.totalPrice = this.cartService.calcTotal();
   }
 
