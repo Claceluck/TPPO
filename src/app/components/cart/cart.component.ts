@@ -6,29 +6,31 @@ import { CartService } from 'src/app/services/cart/cart.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-
   items: Item[] = [];
-  fullName: string = ''
-  address: string = ''
-  creditCard: string = ''
-  totalPrice: number = 0
+  fullName: string = '';
+  address: string = '';
+  creditCard: string = '';
+  totalPrice: number = 0;
 
-  constructor(private cartService: CartService, private router: Router) { }
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
     this.calcPrice();
   }
 
-  clearCart() {
+  clearCart(): void {
     this.cartService.resetCart();
     this.items = [];
   }
 
-  calcPrice() {
+  calcPrice(): void {
     this.totalPrice = this.cartService.calcTotal();
   }
 
@@ -48,6 +50,6 @@ export class CartComponent implements OnInit {
   submit(): void {
     this.cartService.setFullName(this.fullName);
     this.calcPrice();
-    this.router.navigate(['confirmation'])
+    this.router.navigate(['confirmation']);
   }
 }
