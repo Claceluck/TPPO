@@ -7,22 +7,23 @@ import Product from '../../models/product';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-
   products: Product[] = [];
 
-  constructor(private productS: ProductService, private cartS: CartService) { }
+  constructor(
+    private productS: ProductService,
+    private cartS: CartService,
+  ) {}
 
   ngOnInit(): void {
-    this.productS.getProducts().subscribe(products => {
+    this.productS.getProducts().subscribe((products) => {
       this.products = products;
     });
   }
 
-  addToCart(item: Item) {
+  addToCart(item: Item): void {
     this.cartS.addItem(item);
   }
-
 }

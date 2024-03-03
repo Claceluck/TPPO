@@ -20,15 +20,10 @@ import { ProductItemDetailComponent } from './components/product-item-detail/pro
     CartComponent,
     ProductListComponent,
     ProductItemComponent,
-    ProductItemDetailComponent
+    ProductItemDetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
