@@ -9,10 +9,5 @@ export class NavBarComponent implements OnInit {
   currentComponent: string = 'home';
 
   constructor() {}
-
   ngOnInit(): void {}
-
-  trigger(component: string): void {
-    this.currentComponent = component;
-  }
 }
