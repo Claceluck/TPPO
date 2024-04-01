@@ -14,7 +14,7 @@ export class ProductItemDetailComponent implements OnInit {
   id: number = 0;
   product: Product = new Product();
   quantity: number = 1;
-  quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  quantities: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(
     private productService: ProductService,

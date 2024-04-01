@@ -31,6 +31,10 @@ export class CartComponent implements OnInit {
   }
 
   calcPrice(): void {
+    if (this.items.length <= 0) {
+      return;
+    }
+
     this.totalPrice = this.cartService.calcTotal();
   }
 
@@ -39,6 +43,10 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(item: Item): void {
+    if (!item) {
+      return;
+    }
+
     if (confirm(`Are you sure you want to remove ${item.product.name}?`)) {
       this.cartService.removeItem(item);
       this.items = this.cartService.getItems();

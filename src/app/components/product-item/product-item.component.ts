@@ -12,7 +12,7 @@ export class ProductItemComponent implements OnInit {
   @Input() product: Product = new Product();
   @Output() added = new EventEmitter();
 
-  quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  quantities: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   quantity: number = 1;
 
   constructor(private router: Router) {}
